@@ -39,11 +39,11 @@ body {
   
   button[type="submit"] {
     height: 40px;
-    width: 70px;
+    width: 40px;
     background-color: gray;
     color: white;
     border: 1px solid gray;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
     cursor: pointer;
   }
   
@@ -91,5 +91,31 @@ body {
     justify-content: center;
     align-items: center;
     height: 60px;
+  }
+
+  .sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: lightgray;
+    margin-right: 20px;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label, select, button {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 20px;
+  } 
+  
+  button[type="submit"] {
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
   }
   
