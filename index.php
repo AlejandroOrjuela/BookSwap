@@ -8,7 +8,7 @@
   <header>
     <nav>
       <div class="search-container">
-        <form action="#">
+        <form action="buscar.php">
           <input type="text" placeholder="Buscar productos">
           <button type="submit">Buscar</button>
         </form>
