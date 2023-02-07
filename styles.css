@@ -39,7 +39,7 @@ body {
   
   button[type="submit"] {
     height: 40px;
-    width: 40px;
+    width: 70px;
     background-color: gray;
     color: white;
     border: 1px solid gray;
