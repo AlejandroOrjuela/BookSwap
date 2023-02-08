@@ -7,7 +7,7 @@
 <body>
   <header>
     <nav>
-    <img href="index.php" src="img/lib.png">
+    <img href="index.php" src="img/logo.png">
       <div class="search-container">
         <form action="buscar.php">
           <input type="text" placeholder="Buscar productos">
@@ -28,7 +28,7 @@
       <ul>
         <li><a href="index.php">Inicio</a></li>
         <li><a href="#">Carrito de compra</a></li>
-        <li><a href="#">Iniciar sesión</a></li>
+        <li><a href="session/index.php">Iniciar sesión</a></li>
         <li><a href="#">Subir producto</a></li>
       </ul>
     </nav>
