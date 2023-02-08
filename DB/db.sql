@@ -19,7 +19,6 @@ ALTER TABLE publicacion ADD CONSTRAINT fk_id_u1 FOREIGN KEY (id_u) REFERENCES us
 
 CREATE TABLE compra(
     id_c serial primary key,
-    nomb_l varchar(20),
     fecha date,
     pagado boolean,
     id_u varchar(10),
