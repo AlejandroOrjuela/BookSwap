@@ -5,14 +5,12 @@
   <title>Página de inicio de sesión</title>
 </head>
 <body>
-  <header>
+<header>
     <nav>
-    <img class="logo" href="../index.php" src="../img/logo.png">
+    <img class="logo" src="../img/logo.png" width="60px" height="60px">
+    <h1>BookSwap</h1>
       <ul>
         <li><a href="../index.php">Inicio</a></li>
-        <li><a href="#">Carrito de compra</a></li>
-        <li><a href="#">Iniciar sesión</a></li>
-        <li><a href="#">Subir producto</a></li>
       </ul>
     </nav>
   </header>

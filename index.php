@@ -1,7 +1,9 @@
 <?php
+session_start();
 require("databases/conexion.php");
 $query = "SELECT * FROM publicacion";
 $libro = mysqli_query($conexion, $query);
+
 ?>
 
 <!DOCTYPE html>
@@ -13,29 +15,28 @@ $libro = mysqli_query($conexion, $query);
 <body>
   <header>
     <nav>
-    <img class="logo" href="index.php" src="img/logo.png">
+    <img class="logo" src="img/logo.png">
+    <h1>BookSwap</h1>
       <div class="search-container">
         <form action="buscar.php">
           <input type="text" placeholder="Buscar productos">
           <button type="submit">Ir</button>
         </form>
-        <form action="buscar.php">
-        <select id="categoria" name="categoria">
-        <option value="">Selecciona una categoría</option>
-        <option value="libros">Libros</option>
-        <option value="electronica">Electrónica</option>
-        <option value="ropa">Ropa</option>
-      </select>
-      
-      <button type="submit">Filtrar</button>
-    </form>
-  
       </div>
       <ul>
         <li><a href="index.php">Inicio</a></li>
-        <li><a href="#">Carrito de compra</a></li>
-        <li><a href="session/index.php">Iniciar sesión</a></li>
-        <li><a href="#">Subir producto</a></li>
+        <li><?php if (isset($_SESSION["USER"])) {
+          ?>
+          <li><a href="#">Carrito de compra</a></li>
+          <li><a href="publication/index.php">Subir producto</a></li>
+          <?php
+            echo $_SESSION["USER"];
+            ?>
+            <li><a href="session/cerrar_sesion.php">Cerrar sesion</a></li>
+            <?php
+          }else{ ?><a href="session/index.php">Iniciar sesión</a>
+        <?php }?>
+      </li>
       </ul>
     </nav>
   </header>
@@ -49,13 +50,19 @@ $libro = mysqli_query($conexion, $query);
       <div class="product">
         <img class="portada" src="img/lib.png" alt="Product 1">
         <h3><?php echo $row["nomb_p"] ?></h3>
+        <p><?php
+        $id = $row["id_p"];
+        $query = "SELECT nomb_u FROM usuario,publicacion WHERE id_p = '$id' and publicacion.id_u = usuario.id_u";
+        $autor = mysqli_query($conexion, $query);
+        $nombre = mysqli_fetch_assoc($autor);
+        echo $nombre["nomb_u"] 
+        ?></p>
         <p><?php echo $row["precio"] ?></p>
         <p><?php echo $row["descr"] ?></p>
         <button>Añadir al carrito</button>
       </div>
       <?php } ?>
     </section>
-    
   </main>
   <footer>
     <p>&copy; 2023 Tienda en línea</p>

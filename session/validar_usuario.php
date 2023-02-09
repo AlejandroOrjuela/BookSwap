@@ -4,8 +4,12 @@
     $pass = $_POST["password"];
     $query = "SELECT id_u FROM usuario WHERE id_u='$nick' and clave = '$pass'";
 	$consulta = mysqli_query($conexion, $query);
-    
-session_start();
-$_SESSION['USER'] = $nick;
+    $row = mysqli_fetch_assoc($consulta);
+if (isset($row)){
+    session_start();
+    $_SESSION['USER'] = $nick;
+    $_SESSION['PASS'] = $pass;
+}
+
 Header("Location:../index.php");
 ?>
