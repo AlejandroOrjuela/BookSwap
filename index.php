@@ -1,13 +1,19 @@
+<?php
+require("databases/conexion.php");
+$query = "SELECT * FROM publicacion";
+$libro = mysqli_query($conexion, $query);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Tienda en línea</title>
 </head>
 <body>
   <header>
     <nav>
-    <img href="index.php" src="img/logo.png">
+    <img class="logo" href="index.php" src="img/logo.png">
       <div class="search-container">
         <form action="buscar.php">
           <input type="text" placeholder="Buscar productos">
@@ -37,13 +43,19 @@
     <h1>Bienvenido a nuestra tienda en línea</h1>
     <p>Aquí encontrarás una amplia variedad de productos para todos los gustos y presupuestos.</p>
     <section class="products">
+    <?php
+     while($row = mysqli_fetch_assoc($libro)){ 
+     ?>
       <div class="product">
-        <img src="img/lib.png" alt="Product 1">
-        <h3>Producto 1</h3>
-        <p>$100</p>
+        <img class="portada" src="img/lib.png" alt="Product 1">
+        <h3><?php echo $row["nomb_p"] ?></h3>
+        <p><?php echo $row["precio"] ?></p>
+        <p><?php echo $row["descr"] ?></p>
         <button>Añadir al carrito</button>
       </div>
+      <?php } ?>
     </section>
+    
   </main>
   <footer>
     <p>&copy; 2023 Tienda en línea</p>

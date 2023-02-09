@@ -9,7 +9,6 @@
         $ven=1;
     } else {
     $ven = 0;}
-echo $ven . "dsqaqas";
     $query = "INSERT INTO usuario (id_u, nomb_u, clave, fecha_nac, vendedor) VALUES ('$nick','$name','$pass' ,'$nac', $ven)";
 	$consulta = mysqli_query($conexion, $query);
 session_start();

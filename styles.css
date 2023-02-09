@@ -39,7 +39,7 @@ body {
   
   button[type="submit"] {
     height: 40px;
-    width: 40px;
+    width: auto;
     background-color: gray;
     color: white;
     border: 1px solid gray;
@@ -81,8 +81,15 @@ body {
     text-align: center;
   }
   
-  img {
-    width: 100%;
+
+  img.logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  img.portada {
+    width: 80%;
+    height: 80%;
   }
   
   footer {

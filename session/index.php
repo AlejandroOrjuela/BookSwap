@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Página de inicio de sesión</title>
 </head>
 <body>
   <header>
     <nav>
+    <img class="logo" href="../index.php" src="../img/logo.png">
       <ul>
-        <li><a href="#">Inicio</a></li>
+        <li><a href="../index.php">Inicio</a></li>
         <li><a href="#">Carrito de compra</a></li>
         <li><a href="#">Iniciar sesión</a></li>
         <li><a href="#">Subir producto</a></li>

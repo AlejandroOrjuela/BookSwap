@@ -1,0 +1,4 @@
+PostgreSQL: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+Xampp: https://www.apachefriends.org/
+Código fuente: https://github.com/AlejandroOrjuela/BookSwap.git
+Informe técnico: https://docs.google.com/document/d/1_ytFJfRJV-LJWZv15Wi712g1KBJbcito/edit?usp=sharing&ouid=106457681082846817970&rtpof=true&sd=true
