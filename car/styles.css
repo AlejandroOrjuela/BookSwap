@@ -75,7 +75,36 @@ main ul {
   color: black;
   }
   
-  
+.main {
+width: 80%;
+margin: 0 auto;
+text-align: center;
+}
+
+ul {
+list-style: none;
+display: inline-block;
+margin: 0;
+padding: 0;
+}
+
+li {
+display: inline-block;
+margin-right: 1em;
+padding: 0.5em 1em;
+background-color: lightgray;
+border-radius: 5px;
+}
+
+button[type="submit"] {
+margin-top: 2em;
+padding: 0.5em 1em;
+background-color: green;
+color: white;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+}
   
   
   

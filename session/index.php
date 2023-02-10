@@ -16,7 +16,7 @@
   </header>
   <main>
     <h1>Inicio de sesión</h1>
-    <section class="login-form">
+    <section class="register-form">
       <form action="validar_usuario.php" method="post">
         <input type="text" name="username" placeholder="Usuario" autocomplete="on" required>
         <br><br>

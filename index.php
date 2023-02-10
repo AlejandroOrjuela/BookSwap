@@ -20,7 +20,7 @@ $libro = mysqli_query($conexion, $query);
       <div class="search-container">
         <form action="buscar.php">
           <input type="text" placeholder="Buscar productos">
-          <button type="submit">Ir</button>
+          <button type="submit">Buscar</button>
         </form>
       </div>
       <ul>
@@ -50,15 +50,15 @@ $libro = mysqli_query($conexion, $query);
       <div class="product">
         <img class="portada" src="img/lib.png" alt="Product 1">
         <h3><?php echo $row["nomb_p"] ?></h3>
-        <p><?php
+        <p>Publicador: <?php
         $id = $row["id_p"];
         $query = "SELECT nomb_u FROM usuario,publicacion WHERE id_p = '$id' and publicacion.id_u = usuario.id_u";
         $autor = mysqli_query($conexion, $query);
         $nombre = mysqli_fetch_assoc($autor);
         echo $nombre["nomb_u"] 
         ?></p>
-        <p><?php echo "$".$row["precio"] ?></p>
-        <p><?php echo $row["descr"] ?></p>
+        <p>Precio: <?php echo "$".$row["precio"] ?></p>
+        <p>Descripcion:  <?php echo $row["descr"] ?></p>
         <?php if(isset($_SESSION["USER"])) {?>
         <form action="car/add_car.php">
         <?php }else{  ?>
@@ -66,7 +66,6 @@ $libro = mysqli_query($conexion, $query);
         <?php }  ?>  
           <button type="submit" name="id" value= "<?php echo $row["id_p"] ?>">Añadir al carrito</button>
         </form>
-        <button></button>
       </div>
       <?php } ?>
     </section>
