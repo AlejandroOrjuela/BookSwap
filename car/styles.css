@@ -44,6 +44,11 @@ main {
   align-items: center;
 }
 
+img.logo {
+  width: 60px;
+  height: 60px;
+}
+
 footer {
   background-color: lightgray;
   display: flex;
@@ -52,4 +57,25 @@ footer {
   height: 60px;
   width: 100%;
   bottom: 0%;
+  position: absolute;
 }
+
+main ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+  }
+  
+  main li {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  }
+  
+  
+  
+  
+  

@@ -10,7 +10,7 @@ $libro = mysqli_query($conexion, $query);
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
-  <title>Tienda en línea</title>
+  <title>BookSwap</title>
 </head>
 <body>
   <header>
@@ -31,12 +31,10 @@ $libro = mysqli_query($conexion, $query);
     </nav>
   </header>
   <main>
-  
     <h1>Subir publicacion</h1>
-    <section class="register-form">
+    <section class="login-form">
     <form action="add_pub.php" method="post">
-    <label for="book-id">ID del libro:</label>
-    <input type="text" name="book-id">
+    <input type="hidden" value="<?php echo $num=mt_rand(1,1000); ?>" name="book-id">
     <br><br>   
     <label for="book-name">Nombre del libro:</label>
     <input type="text" name="book-name">
@@ -46,13 +44,13 @@ $libro = mysqli_query($conexion, $query);
     <br><br>        
     <label for="book-description">Descripción del libro:</label>
     <input type="text" name="descripcion">
-    <br>
-    <button type="submit">Enviar</button>
+    <br><br>
+    <button type="submit">Publicar</button>
   </form>
     </section>
 </main>
   <footer>
-    <p>&copy; 2023 Tienda en línea</p>
+    <p>&copy; 2023 BookSwap</p>
   </footer>
 </body>
 </html>

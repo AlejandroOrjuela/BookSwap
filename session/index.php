@@ -47,7 +47,7 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2023 Tienda en línea</p>
+    <p>&copy; 2023 BookSwap</p>
   </footer>
 </body>
 </html>

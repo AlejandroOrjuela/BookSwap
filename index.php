@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("databases/conexion.php");
-$query = "SELECT * FROM publicacion";
+$query = "SELECT * FROM publicacion WHERE disp = true";
 $libro = mysqli_query($conexion, $query);
 
 ?>
@@ -10,7 +10,7 @@ $libro = mysqli_query($conexion, $query);
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
-  <title>Tienda en línea</title>
+  <title>BookSwap</title>
 </head>
 <body>
   <header>
@@ -27,11 +27,11 @@ $libro = mysqli_query($conexion, $query);
         <li><a href="index.php">Inicio</a></li>
         <li><?php if (isset($_SESSION["USER"])) {
           ?>
-          <li><a href="#">Carrito de compra</a></li>
+          <li><a href="car/index.php">Carrito de compra</a></li>
           <li><a href="publication/index.php">Subir producto</a></li>
-          <?php
-            echo $_SESSION["USER"];
-            ?>
+          <li><a href="perfil/index.php">
+          <?php echo $_SESSION["USER"]; ?>
+            </a></li>
             <li><a href="session/cerrar_sesion.php">Cerrar sesion</a></li>
             <?php
           }else{ ?><a href="session/index.php">Iniciar sesión</a>
@@ -41,7 +41,7 @@ $libro = mysqli_query($conexion, $query);
     </nav>
   </header>
   <main>
-    <h1>Bienvenido a nuestra tienda en línea</h1>
+    <h1>Bienvenido a BookSwap</h1>
     <p>Aquí encontrarás una amplia variedad de productos para todos los gustos y presupuestos.</p>
     <section class="products">
     <?php
@@ -57,15 +57,22 @@ $libro = mysqli_query($conexion, $query);
         $nombre = mysqli_fetch_assoc($autor);
         echo $nombre["nomb_u"] 
         ?></p>
-        <p><?php echo $row["precio"] ?></p>
+        <p><?php echo "$".$row["precio"] ?></p>
         <p><?php echo $row["descr"] ?></p>
-        <button>Añadir al carrito</button>
+        <?php if(isset($_SESSION["USER"])) {?>
+        <form action="car/add_car.php">
+        <?php }else{  ?>
+          <form action="session/index.php">
+        <?php }  ?>  
+          <button type="submit" name="id" value= "<?php echo $row["id_p"] ?>">Añadir al carrito</button>
+        </form>
+        <button></button>
       </div>
       <?php } ?>
     </section>
   </main>
   <footer>
-    <p>&copy; 2023 Tienda en línea</p>
+    <p>&copy; 2023 BookSwap</p>
   </footer>
 </body>
 </html>

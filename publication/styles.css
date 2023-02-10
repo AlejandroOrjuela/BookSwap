@@ -1,127 +1,66 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: lightgray;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .search-container {
-    display: flex;
-  }
-  
-  form {
-    display: flex;
-  }
-  
-  input[type="text"] {
-    height: auto;
-    width: auto;
-    border: 1px solid gray;
-    border-radius: 5px 0 0 5px;
-    padding: 0 10px;
-    font-size: 14px;
-  }
-  
-  button[type="submit"] {
-    height: 40px;
-    width: auto;
-    background-color: gray;
-    color: white;
-    border: 1px solid gray;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  li a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 0;
-  }
-  
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80%;
-  }
-  
-  .product {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 10px;
-    text-align: center;
-  }
-  
-  
-  img.logo {
-    width: 60px;
-    height: 60px;
-  }
-  
-  footer {
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-  }
-  
-  .sidebar {
-    width: 20%;
-    padding: 20px;
-    background-color: lightgray;
-    margin-right: 20px;
-  }
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  label, select, button {
-    font-size: 14px;
-    width: 100%;
-    margin-bottom: 20px;
-  } 
-  
-  button[type="submit"] {
-    background-color: gray;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  textarea {
-    width : auto;
-    height: auto;
-  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.logo {
+  width: 60px;
+  height: 60px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  bottom: 0%;
+  position: absolute;
+}
