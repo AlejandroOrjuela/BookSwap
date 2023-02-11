@@ -13,5 +13,6 @@
 	$consulta = mysqli_query($conexion, $query);
 session_start();
 $_SESSION['USER'] = $nick;
+$_SESSION['VEN'] = $ven;
 Header("Location:../index.php");
 ?>

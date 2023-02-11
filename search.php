@@ -1,8 +1,13 @@
 <?php
 session_start();
 require("databases/conexion.php");
-$query = "SELECT * FROM publicacion WHERE disp = true";
+
+$bus = $_POST["pet"];
+
+$query = "SELECT * FROM publicacion WHERE disp = true AND nomb_p = '$bus'";
 $libro = mysqli_query($conexion, $query);
+
+
 
 ?>
 
@@ -28,9 +33,7 @@ $libro = mysqli_query($conexion, $query);
         <li><?php if (isset($_SESSION["USER"])) {
           ?>
           <li><a href="car/index.php">Carrito de compra</a></li>
-          <?php if($_SESSION["VEN"] == 1){  ?>
           <li><a href="publication/index.php">Subir producto</a></li>
-          <?php } ?>
           <li><a href="perfil/index.php">
           <?php echo $_SESSION["USER"]; ?>
             </a></li>
